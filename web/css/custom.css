@@ -1,0 +1,10 @@
+label{
+    width:160px
+}
+.modal-body {
+  /* height: auto !important; */
+  /* overflow-y: inherit !important; */
+  /* overflow-y: auto !important; */
+  max-height: none !important;
+  overflow-y: scroll !important;
+}
