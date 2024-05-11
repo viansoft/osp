@@ -54,7 +54,7 @@ class Project
     
     public function getActions()
     {
-        return '<a href="/project/update/?project=' . $this->dir . '" data-width="800" data-title="' . $this->dir . '" data-toggle="lightbox"><i class="fa-regular fa-rectangle-list"></i></a>';
+        return '<a href="/project/update/?project=' . $this->dir . '" title="Edit" data-width="800" data-title="' . $this->dir . '" data-toggle="lightbox"><i class="fa-regular fa-rectangle-list"></i></a>';
     }
     
     public function read()
