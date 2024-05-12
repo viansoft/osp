@@ -9,5 +9,5 @@ To install make 5 small steps:
 
 P.S. after any saving, please do not forget restart openserver   
 
-Write any questions/suggestion in the telegram group https://t.me/+co9eE40ZNswwMzQy
+Write any questions/suggestions in the telegram group https://t.me/+co9eE40ZNswwMzQy
 
