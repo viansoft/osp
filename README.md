@@ -8,3 +8,6 @@ To install make 5 small steps:
 5. enjoy ;-)
 
 P.S. after any saving, please do not forget restart openserver   
+
+Write any questions/suggestion in the telegram group https://t.me/+co9eE40ZNswwMzQy
+
