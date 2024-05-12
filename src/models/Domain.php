@@ -23,7 +23,8 @@ class Domain
                 'type' => 'text',
             ],
             'enabled' => [
-                'type' => 'text',
+                'type' => 'select',
+                'items' => self::allEnabled(),
             ],
             'environment' => [
                 'type' => 'text',
@@ -68,6 +69,23 @@ class Domain
         ];
     }
     
+    static public function allEnabled()
+    {
+        $vals = [
+            '',
+            'on',
+            'off',
+        ];
+        
+        $res = [];
+        
+        foreach($vals as $val){
+            $res[$val] = $val;            
+        }
+        
+        return $res;
+    }
+
     static public function allPhpEngine()
     {
         $versions = [
@@ -80,7 +98,6 @@ class Domain
             '8.3',
         ];
         
-        // $res = ['' => ''];
         $res = [];
         
         foreach($versions as $version){
@@ -90,7 +107,7 @@ class Domain
         
         return $res;
     }
-    
+
     public function __construct($name, $options)
     {
         $this->name = $name;    
