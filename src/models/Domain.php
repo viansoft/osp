@@ -24,7 +24,7 @@ class Domain
             ],
             'enabled' => [
                 'type' => 'select',
-                'items' => self::allEnabled(),
+                'items' => self::allOnOff(),
             ],
             'environment' => [
                 'type' => 'text',
@@ -52,7 +52,8 @@ class Domain
                 'type' => 'text',
             ],
             'ssl' => [
-                'type' => 'text',
+                'type' => 'select',
+                'items' => self::allOnOff(),
             ],
             'ssl_cert_file' => [
                 'type' => 'text',
@@ -69,7 +70,7 @@ class Domain
         ];
     }
     
-    static public function allEnabled()
+    static public function allOnOff()
     {
         $vals = [
             '',
