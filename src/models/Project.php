@@ -2,8 +2,6 @@
 
 namespace osp\src\models;
 
-use osp\src\components\OspReader;
-
 class Project
 {
     public $dir;
@@ -66,11 +64,16 @@ class Project
         if (!file_exists($file))
             return;
         
-        $domainsStr = OspReader::fileToDomainsStr($file);
+        $domains = parse_ini_file($file,true);
         
-        foreach($domainsStr as $str){
-            $this->domains[] = OspReader::strToDomain($str);
-        }        
+        foreach($domains as $name => $options){
+            
+            foreach(['ssl','enabled'] as $key){
+                $options[$key] = isset($options[$key]) ? ($options[$key] ? 'on' : 'off')  : '';
+            }
+            
+            $this->domains[] = new Domain($name, $options);
+        }
     }    
 
     public function setDomains($domains)

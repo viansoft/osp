@@ -39,7 +39,7 @@ class OspReader
         $d->close();        
     }
     
-    
+    /*
     static public function fileToDomainsStr($file)
     {
         $str = file_get_contents($file);
@@ -83,5 +83,6 @@ class OspReader
         }
     
         return new Domain($name,$options);        
-    }    
+    } 
+    */    
 }

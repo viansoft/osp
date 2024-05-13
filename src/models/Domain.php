@@ -116,6 +116,7 @@ class Domain
         $keys = array_keys(self::fields());
         
         $this->options = $options; 
+        
         foreach($keys as $key){
             if (!isset($this->options[$key])){
                 $this->options[$key] = '';

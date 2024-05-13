@@ -88,7 +88,7 @@
       Enjoy!
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2024 Vian. All rights reserved.
+    <strong>Copyright &copy; 2024 <a href="https://github.com/viansoft/osp/" target="_blank">viansoft</a>. All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
