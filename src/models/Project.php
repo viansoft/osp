@@ -30,8 +30,8 @@ class Project
     static public function labels()
     {
         return [
-            'dir' => 'Dir',
             'domains' => 'Domains',
+            'dir' => 'Dir',
             'actions' => '',
         ];
     }

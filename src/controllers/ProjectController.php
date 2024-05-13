@@ -9,11 +9,9 @@ use osp\src\components\JsonHelper;
 
 class ProjectController extends StandartController
 {
-    /*    
     public function __construct()
     {
     }    
-    */
     
     static public function table()
     {        
@@ -28,8 +26,8 @@ class ProjectController extends StandartController
             $project->read();
             
             $data[] = [
-                'dir' => $project->dir,
                 'domains' => $project->getDomains(),
+                'dir' => $project->dir,
                 'actions' => $project->getActions(),
             ];
         }
@@ -42,8 +40,6 @@ class ProjectController extends StandartController
             'headers' => $headers,
             'data' => $data,
         ]);
-        
-        return $res;
     }    
     
     public function actionUpdate()
@@ -78,16 +74,6 @@ class ProjectController extends StandartController
             echo JsonHelper::outputSuccess('',['project'=>$dirProject]);
             app()->end();
         }
-
-        /*
-        if (isset($_GET['domain'])){
-            $project->setDomains($_GET['domain']);
-            $project->write();
-            echo JsonHelper::outputSuccess('Saved');
-            app()->end();
-        }
-        */
-        // $project->read();
         
         return $this->renderPartial('create');
     }    
