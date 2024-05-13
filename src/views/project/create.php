@@ -1,7 +1,7 @@
 <form action="#">
     <h5>Select directory where you want to create new project:</h5><?php
     
-        ?><select name="project"><?php
+        ?><select name="project" class="form-control"><?php
         
         $reader = new osp\src\components\OspReader(app()->dir('projects'));    
         

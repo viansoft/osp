@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/ekko-lightbox.css">
 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
 <script>var app = {};</script>
 <script src="/js/jquery-3.6.0.min.js"></script>
 <script src="/js/jquery-ui.js"></script>
