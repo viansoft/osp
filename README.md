@@ -9,5 +9,10 @@ To install make 5 small steps:
 
 P.S. after any saving, please do not forget restart openserver   
 
+Advantages of using:
+1. show list of all projects with posibilities search and open project in new browser window
+2. view/save option in one click in popup window
+3. saving previous vesion of file project.ini in format project.ini.yyyymmdd_hhmmss (as archive of rewrited version), that allows to restore previous version if save incorrect value(s) in new version  
+
 Write any questions/suggestions in the telegram group https://t.me/OspEasyEditor
 
