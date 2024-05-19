@@ -54,12 +54,17 @@ class Project
     {
         return '<a href="/project/update/?project=' . $this->dir . '" title="Edit" data-width="800" data-title="' . $this->dir . '" data-toggle="lightbox"><i class="fa-regular fa-rectangle-list"></i></a>';
     }
+
+    public function getFile()
+    {
+        return app()->dir('projects') . $this->dir . DS . '.osp' . DS . 'project.ini';;
+    }    
     
     public function read()
     {
         $this->domains = [];
 
-        $file = app()->dir('projects') . $this->dir . DS . '.osp' . DS . 'project.ini';
+        $file = $this->getFile();
         
         if (!file_exists($file))
             return;
@@ -95,7 +100,7 @@ class Project
             $content .= $domain->getFileContent();
         }
         
-        $file = app()->dir('projects') . $this->dir . DS . '.osp' . DS . 'project.ini';
+        $file = $this->getFile();
         
         if (file_exists($file)){
             $to = str_replace('project.ini','project.ini.' . date('Ymd_his'),$file);
