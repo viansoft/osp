@@ -22,3 +22,10 @@ function controller()
 {
     return app()->controller;
 }
+
+function inc($view, $params=[])
+{
+    $file = dirname(__DIR__) . DS . 'views' . DS . 'inc' . DS . $view . '.php';
+    
+    return app()->render($file,$params);
+}

@@ -1,6 +1,6 @@
 <label>Domain:</label><input type="text" name="domain[<?= $num ?>][name]" value="<?= $domain->name; ?>"><?php
 
-$fields = osp\src\models\Domain::fields();
+$fields = $domain->fields();
 
 foreach($domain->options as $option => $value){
     ?><br><label><?= $option ?>:</label><?php

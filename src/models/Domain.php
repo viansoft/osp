@@ -2,21 +2,35 @@
 
 namespace osp\src\models;
 
-class Domain
+class Domain extends FileIniSection
 {
-    public $name;
-    public $options = [];
-    
     /*
     $defauts = [
         'php_engine' => 'PHP-8.0',
     ];    
     */
     
-    public $keys = [
-    ];
+/*
+aliases           = www alias-example.local
+enabled           = on
+environment       = System
+ip                = auto
+nginx_engine      = 
+node_engine       = 
+php_engine        = PHP-8.1
+project_dir       = {base_dir}
+project_url       = https://{host_decoded}
+public_dir        = {base_dir}\public
+ssl               = on
+ssl_cert_file     = auto
+ssl_key_file      = auto
+start_command     = 
+terminal_codepage = 65001        
+*/    
+    
 
-    static public function fields()
+
+    public function fields()
     {
         return [
             'aliases' => [
@@ -107,54 +121,5 @@ class Domain
         }
         
         return $res;
-    }
-
-    public function __construct($name, $options)
-    {
-        $this->name = $name;    
-        
-        $keys = array_keys(self::fields());
-        
-        $this->options = $options; 
-        
-        foreach($keys as $key){
-            if (!isset($this->options[$key])){
-                $this->options[$key] = '';
-            }
-        }    
-/*
-aliases           = www alias-example.local
-enabled           = on
-environment       = System
-ip                = auto
-nginx_engine      = 
-node_engine       = 
-php_engine        = PHP-8.1
-project_dir       = {base_dir}
-project_url       = https://{host_decoded}
-public_dir        = {base_dir}\public
-ssl               = on
-ssl_cert_file     = auto
-ssl_key_file      = auto
-start_command     = 
-terminal_codepage = 65001        
-*/
-    }    
-    
-    public function getFileContent()
-    {        
-        $lines = [];
-        
-        $lines[] = '[' . $this->name . ']';
-        // $lines[] = PHP_EOL;
-
-        foreach($this->options as $option => $value){
-            if (strlen($value)){
-                $space = 18 - strlen($option);
-                $lines[] = $option . str_repeat(" ",$space) . '= ' . $value;
-            }    
-        }
-        
-        return implode(PHP_EOL,$lines) . PHP_EOL;
     }
 }

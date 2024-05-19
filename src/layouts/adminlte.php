@@ -31,27 +31,23 @@
 </head>
 <body class="hold-transition layout-top-nav layout-navbar-fixed">
 <div class="wrapper">
+    <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+        <div class="container">
+        <a href="#" class="navbar-brand">
+            <span class="brand-text font-weight-light"><a href="https://ospanel.io/" target="_blank">OSP</a>&nbsp;<a href="https://github.com/viansoft/osp/" target="_blank">Easy Editor</a></span>
+        </a>
 
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
-    <div class="container">
-      <a href="#" class="navbar-brand">
-        <span class="brand-text font-weight-light"><a href="https://ospanel.io/" target="_blank">OSP</a>&nbsp; Easy Editor</span>
-      </a>
+        <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
-        <!-- Left navbar links -->
+        <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="/project/" class="nav-link">Projects</a>
-          </li>
+            <li class="nav-item"><a href="/project/" class="<?= (app()->controllerName == 'project' ? 'active ' : '') ?>nav-link">Projects</a></li>
+            <li class="nav-item"><a href="/system/" class="<?= (app()->controllerName == 'system' ? 'active ' : '') ?>nav-link">System</a></li>
         </ul>
-      </div>
-  </nav>
+        </div>
+    </nav>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->

@@ -2,9 +2,6 @@
 
 namespace osp\src\components;
 
-use osp\src\models\Project;
-use osp\src\models\Domain;
-
 class OspReader
 {
     protected $dir = null;
@@ -38,51 +35,4 @@ class OspReader
 
         $d->close();        
     }
-    
-    /*
-    static public function fileToDomainsStr($file)
-    {
-        $str = file_get_contents($file);
-    
-        preg_match_all('/\[.+\]/', $str, $allMatches);
-    
-        $matches = $allMatches[0];
-    
-        $count = count($matches);
-    
-        for($i = 0; $i < $count-1; $i++){
-            $pos = strpos($str,$matches[$i+1]);
-            $domains[$i] = substr($str,0,$pos);
-            $str = substr($str,$pos);
-        }
-
-        $domains[$i] = $str;
-    
-        return $domains;
-    }    
-
-    static public function strToDomain($str)
-    {
-        preg_match('/\[.+\]/', $str, $match);
-    
-        $str = str_replace($match,'',$str);
-    
-        $lines = explode(PHP_EOL, $str);
-    
-        $res = [];
-    
-        $name = trim($match[0],'[]');
-
-        $options = [];
-    
-        foreach($lines as $line){
-            if (strpos($line,'=')){
-                $a = explode('=',$line);
-                $options[trim($a[0])] = trim($a[1]);
-            }    
-        }
-    
-        return new Domain($name,$options);        
-    } 
-    */    
 }

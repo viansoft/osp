@@ -4,7 +4,8 @@ namespace osp\src\components;
 
 class App
 {
-    public $defaultController = 'project';
+    public $defaultControllerName = 'project';
+    public $controllerName;
     public $controller;
     public $url = [];
     
@@ -26,6 +27,7 @@ class App
         
         $this->config['dirs'] = [
             'projects' => rtrim($config['projects'],DS) . DS,
+            'OSPanel' => rtrim($config['OSPanel'],DS) . DS,
             'app' => $app,
             'src' => $src,
             'views' => $views,
@@ -52,15 +54,16 @@ class App
     {
         $controllers = [
             'project',
+            'system',
         ];
         
         if (in_array($this->url[1],$controllers)){
-            $controller = $this->url[1];
+            $this->controllerName = $this->url[1];
         }else{    
-            $controller = $this->defaultController;
+            $this->controllerName = $this->defaultControllerName;
         }
         
-        $code = '$this->controller = new osp\src\controllers\\' . ucfirst($controller) . 'Controller();';
+        $code = '$this->controller = new osp\src\controllers\\' . ucfirst($this->controllerName) . 'Controller();';
         
         eval($code);
     }
@@ -78,4 +81,17 @@ class App
     {
         exit();
     }
+    
+	public function render($_viewFile_,$_data_=null)
+	{
+		if(is_array($_data_))
+			extract($_data_,EXTR_PREFIX_SAME,'data');
+		else
+			$data=$_data_;
+
+        ob_start();
+        ob_implicit_flush(false);
+        require($_viewFile_);
+        return ob_get_clean();
+	}
 }

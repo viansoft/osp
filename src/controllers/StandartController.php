@@ -69,7 +69,8 @@ class StandartController
         $view = $this->getViewForAction($file);
         
         if (file_exists($view)){
-            $content = $this->_renderInternal($view);
+            // $content = $this->_renderInternal($view);
+            $content = app()->render($view);
         }else{
             $content = '';
         }    
@@ -82,7 +83,8 @@ class StandartController
         $view = $this->getViewForAction($file);
         
         if (file_exists($view)){
-            return $this->_renderInternal($view, $data);
+            // return $this->_renderInternal($view, $data);
+            return app()->render($view, $data);
         }else{
             return '';
         }    
@@ -92,9 +94,11 @@ class StandartController
     {
         $file = app()->dir('layouts') . $this->layout . '.php';
         
-        return $this->_renderInternal($file,['content'=>$content]);
+        // return $this->_renderInternal($file,['content'=>$content]);
+        return app()->render($file,['content'=>$content]);
     }
     
+    /*
 	protected function _renderInternal($_viewFile_,$_data_=null)
 	{
 		if(is_array($_data_))
@@ -107,6 +111,7 @@ class StandartController
         require($_viewFile_);
         return ob_get_clean();
 	}
+    */
     
     protected function getActionsFunction()
     {
