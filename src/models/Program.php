@@ -10,9 +10,14 @@ class Program
     {
     }    
     
+    public function getFile()
+    {
+        return app()->dir('OSPanel') . 'config' . DS . 'program.ini';
+    }
+    
     public function read()
     {
-        $file = app()->dir('OSPanel') . 'config' . DS . 'program.ini';
+        $file = $this->getFile();
 
         if (!file_exists($file)){
             $file = dirname(__DIR__) . DS . 'config' . DS . 'config.php';
@@ -61,7 +66,7 @@ class Program
             $content .= $section->getFileContent();
         }
         
-        $file = app()->dir('OSPanel') . 'config' . DS . 'program.ini';
+        $file = $this->getFile();
         
         if (file_exists($file)){
             $to = str_replace('program.ini','program.ini.' . date('Ymd_his'),$file);
