@@ -81,7 +81,7 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Enjoy!
+      Write here: <a href="https://t.me/OspEasyEditor" target="_blank">https://t.me/OspEasyEditor</a> is it usefull for you and if you need something else?
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2024 <a href="https://github.com/viansoft/osp/" target="_blank">viansoft</a>. All rights reserved.
