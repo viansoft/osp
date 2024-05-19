@@ -12,27 +12,7 @@ case 'success':
         echo controller()->renderPartial('program/section',['section'=>$section]);
     }
 
-?><script>
-$(document).on('click', '#btnProgramUpdate', function(event){
-    $.getJSON('/system/programupdate/?' + $(this).closest("form").serialize(),function(data){
-        switch(data.result){
-        case "success":
-            if (data.message){
-                alert(data.message);
-            }    
-            // app.LightboxClose();
-            location.reload();
-            break;
-        case "error":
-            if (data.message){
-                alert(data.message);
-            }    
-            break;
-        }    
-    });    
-    return false;
-});
-</script><?php
+?><?php
     break;
 case 'error':
     echo $read['message'];

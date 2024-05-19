@@ -26,10 +26,11 @@ class SystemController extends StandartController
             $program = new Program();
             $program->setSections($_GET['section']);
             $program->write();
-            echo JsonHelper::outputSuccess('Saved');
-            app()->end();
+            return $this->render('index');
+            // echo JsonHelper::outputSuccess('Saved');
+            // app()->end();
         }
         
-        return $this->renderPartial('program/form/update');
+        return $this->render('program/form');
     } 
 }
