@@ -2,14 +2,14 @@
 There is small easy web editor for OpenServerPanel version 6 (https://ospanel.io/) 
 1. to add/edit files project.ini for projects
 2. to edit file {OSPanel}/config/program.ini
-To install make 5 small steps:
+
+To install make 4 small steps:
 1. save files to folder '{ROOT_FOR_OSPanel}\OSPanel\home\osp\'.
 2. edit file {ROOT_FOR_OSPanel}\OSPanel\home\osp\src\config\config.php
 2.1. write path to {ROOT_FOR_OSPanel}\OSPanel in the parameter 'OSPanel'
 2.2. [optional] edit paramenter 'projects' if path to folder with projects in other folder than 'home'   
-5. restart openserver
-6. call http://osp.local
-7. enjoy ;-)
+3. restart openserver
+4. call http://osp.local
 
 P.S. after any saving, please do not forget restart openserver   
 
