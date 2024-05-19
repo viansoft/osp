@@ -1,7 +1,7 @@
 <?php
 
 $options = [
-    'title' => 'Projects',
+    'title' => 'List of projects',
     'tools' => '<a href="/project/create/" class="btn btn-primary" data-width="800" data-title="New project" data-toggle="lightbox">New project</a>',
 ];
 

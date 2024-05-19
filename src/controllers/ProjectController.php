@@ -9,6 +9,8 @@ use osp\src\components\JsonHelper;
 
 class ProjectController extends StandartController
 {
+    protected $title = 'Projects';
+
     public function __construct()
     {
     }    
