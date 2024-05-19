@@ -1,7 +1,7 @@
 "# osp" 
 There is small easy web editor for OpenServerPanel version 6 (https://ospanel.io/) 
 1. to add/edit files project.ini for projects
-2. to edit file {OSPanel}/congig/program.ini
+2. to edit file {OSPanel}/config/program.ini
 To install make 5 small steps:
 1. save files to folder '{ROOT_FOR_OSPanel}\OSPanel\home\osp\'.
 2. edit file {ROOT_FOR_OSPanel}\OSPanel\home\osp\src\config\config.php
